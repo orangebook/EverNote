@@ -15,11 +15,15 @@
 3.	Material Design风格的RecyclerView,CardView等各种空间的使用
 4.	使用Toolbar完全替代 ActionBar
 5.  Drawlayout作为app整体布局
+6.  
 # 功能
     添加笔记，笔记分类，查找，删除笔记，编辑笔记
+
 # 新增功能
     笔记阅读
+
 <img src="./screenshot/7.png" width="30%" height="30%">
+
 # 后续更新计划
 1.	代码逻辑混乱，重构一下代码
 2.	主界面activity处理了过多了逻辑，部分menu项处理可以部分放在Fragment中处理，虽然增加了耦合度，但是因为fragment没有其它地方复用，这样做也可以。
