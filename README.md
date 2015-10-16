@@ -20,7 +20,7 @@
     添加笔记，笔记分类，查找，删除笔记，编辑笔记
 
 # 新增功能
-    笔记阅读
+    笔记阅读-HTML-Web阅读界面 
 
 <img src="./screenshot/7.png" width="30%" height="30%">
 
