@@ -2,13 +2,12 @@
 <img src="./screenshot/1.jpeg" width="30%" height="30%">
 <img src="./screenshot/2.jpeg" width="30%" height="30%">
 <img src="./screenshot/3.jpeg" width="30%" height="30%">
-
 <img src="./screenshot/4.jpeg" width="30%" height="30%">
 <img src="./screenshot/5.jpeg" width="30%" height="30%">
 <img src="./screenshot/6.jpeg" width="30%" height="30%">
 
 # EverNote
-自学android两个月，上手练习的一款材料设计风格的个人笔记本，新手值得看一看：
+一款材料设计风格的个人笔记本，新手值得看一看：
 
 # 学到的东西
 1.	使用LitePal框架快速操作数据库
@@ -16,7 +15,11 @@
 3.	Material Design风格的RecyclerView,CardView等各种空间的使用
 4.	使用Toolbar完全替代 ActionBar
 5.  Drawlayout作为app整体布局
-
+# 功能
+    添加笔记，笔记分类，查找，删除笔记，编辑笔记
+# 新增功能
+    笔记阅读
+<img src="./screenshot/7.png" width="30%" height="30%">
 # 后续更新计划
 1.	代码逻辑混乱，重构一下代码
 2.	主界面activity处理了过多了逻辑，部分menu项处理可以部分放在Fragment中处理，虽然增加了耦合度，但是因为fragment没有其它地方复用，这样做也可以。

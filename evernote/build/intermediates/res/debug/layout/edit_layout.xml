@@ -7,4 +7,4 @@
     android:textColor="@android:color/black"
     android:textSize="@dimen/abc_text_size_medium_material"
     app:met_floatingLabelTextColor="?attr/colorPrimary"
-    app:met_primaryColor="?attr/colorPrimary" /><!-- From: file:/D:/BaiduYunDownload/Notes-master/evernote/src/main/res/layout/edit_layout.xml -->
+    app:met_primaryColor="?attr/colorPrimary" /><!-- From: file:/I:/CollageMe/inFact/PROJECT/EverNote/evernote/src/main/res/layout/edit_layout.xml -->

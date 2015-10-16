@@ -7,4 +7,10 @@
         android:icon="@drawable/ic_done_white"
         android:title="@string/done"
         app:showAsAction="ifRoom" />
+
+    <!--<item-->
+        <!--android:id="@+id/edit"-->
+        <!--android:icon="@drawable/ic_menu_edit"-->
+        <!--android:title="Edit"-->
+        <!--app:showAsAction="ifRoom" />-->
 </menu>

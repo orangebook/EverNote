@@ -19,12 +19,12 @@
             android:id="@+id/refresher"
             android:layout_width="match_parent"
             android:layout_height="match_parent">-->
-            <!--主布局-->
-            <FrameLayout
-                android:id="@+id/drawer_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white" />
+        <!--主布局-->
+        <FrameLayout
+            android:id="@+id/drawer_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
         <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
         <!--侧滑菜单-->

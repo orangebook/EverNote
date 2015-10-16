@@ -395,7 +395,7 @@ public final class R {
 		public static final int home = 0x7f0e0004;
 		public static final int homeAsUp = 0x7f0e000f;
 		public static final int icon = 0x7f0e0044;
-		public static final int icon_frame = 0x7f0e0079;
+		public static final int icon_frame = 0x7f0e007b;
 		public static final int ifRoom = 0x7f0e002f;
 		public static final int image = 0x7f0e0041;
 		public static final int listMode = 0x7f0e000b;
@@ -423,13 +423,13 @@ public final class R {
 		public static final int showTitle = 0x7f0e0013;
 		public static final int split_action_bar = 0x7f0e0008;
 		public static final int submit_area = 0x7f0e0064;
-		public static final int summary = 0x7f0e007a;
-		public static final int switch_compat = 0x7f0e007c;
+		public static final int summary = 0x7f0e007c;
+		public static final int switch_compat = 0x7f0e007e;
 		public static final int tabMode = 0x7f0e000d;
 		public static final int title = 0x7f0e0045;
 		public static final int up = 0x7f0e0009;
 		public static final int useLogo = 0x7f0e0014;
-		public static final int widget_frame = 0x7f0e007b;
+		public static final int widget_frame = 0x7f0e007d;
 		public static final int withText = 0x7f0e0031;
 		public static final int wrap_content = 0x7f0e0036;
 	}
@@ -461,11 +461,11 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040015;
 		public static final int abc_search_view = 0x7f040016;
 		public static final int abc_simple_dropdown_hint = 0x7f040018;
-		public static final int mp_checkbox_preference = 0x7f040026;
-		public static final int mp_preference = 0x7f040027;
-		public static final int mp_preference_category = 0x7f040028;
-		public static final int mp_switch_preference = 0x7f040029;
-		public static final int support_simple_spinner_dropdown_item = 0x7f040038;
+		public static final int mp_checkbox_preference = 0x7f040027;
+		public static final int mp_preference = 0x7f040028;
+		public static final int mp_preference_category = 0x7f040029;
+		public static final int mp_switch_preference = 0x7f04002a;
+		public static final int support_simple_spinner_dropdown_item = 0x7f040039;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f070000;

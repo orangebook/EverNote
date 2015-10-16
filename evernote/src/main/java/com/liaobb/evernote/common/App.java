@@ -15,6 +15,6 @@ public class App extends LitePalApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        SQLiteDatabase db = Connector.getDatabase();//³õÊ¼»¯Êı¾İ¿â
+        SQLiteDatabase db = Connector.getDatabase();//è¿æ¥æ•°æ®åº“
     }
 }

@@ -28,7 +28,7 @@ public abstract class ToolbarActivity extends AppCompatActivity {
     }
 
     private void initToolbar(String toolBarTitle) {
-        toolbar.setTitle(toolBarTitle);//ÉèÖÃ±êÌâ
+        toolbar.setTitle(toolBarTitle);//è®¾ç½®æ ‡é¢˜
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

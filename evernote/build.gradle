@@ -21,13 +21,22 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //     一个Google官方的兼容包
     compile 'com.android.support:appcompat-v7:22.2.0'
+    //     一个用于替换ListView有列表界面
     compile 'com.android.support:recyclerview-v7:22.2.0'
+    //     一个卡片式的背景图
     compile 'com.android.support:cardview-v7:22.2.0'
+    //   Google 官方实现的Material design风格控件
     compile 'com.android.support:design:22.2.0'
+    //    注解框架的使用
     compile 'com.jakewharton:butterknife:6.1.0'
+    //    Material design风格的preference,相当于系统的设置界面
     compile 'com.jenzz:materialpreference:1.3'
+    //    Material design风格的materialedttext，重写了EDitText
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    //    郭霖写的SQLite ORM框架
     compile 'org.litepal.android:core:1.2.1'
+    //    Greenrobot的通信框架
     compile 'de.greenrobot:eventbus:2.4.0'
 }

@@ -3,8 +3,8 @@
     <com.jenzz.materialpreference.PreferenceCategory android:title="@string/general_settings">
         <com.jenzz.materialpreference.Preference
             android:key="@string/sync_note_key"
-            android:title="@string/sync_note"
-            android:summary="@string/sync_note_summary"/>
+            android:summary="@string/sync_note_summary"
+            android:title="@string/sync_note" />
 
         <com.jenzz.materialpreference.SwitchPreference
             android:key="@string/right_hand_mode_key"
@@ -13,8 +13,8 @@
 
         <com.jenzz.materialpreference.CheckBoxPreference
             android:key="@string/card_note_item_layout_key"
-            android:title="@string/card_note_item_layout"
-            android:summary="@string/card_note_item_layout_summary"/>
+            android:summary="@string/card_note_item_layout_summary"
+            android:title="@string/card_note_item_layout" />
 
         <com.jenzz.materialpreference.Preference
             android:key="@string/clear_database_key"

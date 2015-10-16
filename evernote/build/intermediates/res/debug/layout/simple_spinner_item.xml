@@ -7,5 +7,5 @@
     android:layout_margin="10dp"
     android:ellipsize="marquee"
     android:singleLine="true"
-    android:textSize="@dimen/abc_text_size_medium_material"
-    android:textAlignment="inherit" /><!-- From: file:/D:/BaiduYunDownload/Notes-master/evernote/src/main/res/layout/simple_spinner_item.xml -->
+    android:textAlignment="inherit"
+    android:textSize="@dimen/abc_text_size_medium_material" /><!-- From: file:/I:/CollageMe/inFact/PROJECT/EverNote/evernote/src/main/res/layout/simple_spinner_item.xml -->

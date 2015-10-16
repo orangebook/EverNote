@@ -62,6 +62,7 @@
             android:padding="6dp"
             android:textColor="#848484"
             android:textSize="@dimen/abc_text_size_small_material"
+            android:lines="2"
             tools:text="Note content"/>
 
         <TextView

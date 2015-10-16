@@ -13,8 +13,16 @@ ADDED from AndroidManifest.xml:2:1
 	android:versionCode
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-application
+uses-permission#android.permission.INTERNET
 ADDED from AndroidManifest.xml:5:5
+	android:name
+		ADDED from AndroidManifest.xml:5:22
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:6:5
+	android:name
+		ADDED from AndroidManifest.xml:6:22
+application
+ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:appcompat-v7:22.2.0:22:5
 MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from com.android.support:support-v4:22.2.0:22:5
@@ -29,55 +37,61 @@ MERGED from com.android.support:appcompat-v7:22.2.0:22:5
 MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from org.litepal.android:core:1.2.1:11:5
 	android:label
-		ADDED from AndroidManifest.xml:9:9
+		ADDED from AndroidManifest.xml:11:9
 	android:allowBackup
-		ADDED from AndroidManifest.xml:7:9
+		ADDED from AndroidManifest.xml:9:9
 	android:icon
-		ADDED from AndroidManifest.xml:8:9
-	android:theme
 		ADDED from AndroidManifest.xml:10:9
+	android:theme
+		ADDED from AndroidManifest.xml:12:9
 	android:name
-		ADDED from AndroidManifest.xml:6:9
+		ADDED from AndroidManifest.xml:8:9
 activity#com.liaobb.evernote.ui.MainActivity
-ADDED from AndroidManifest.xml:11:9
+ADDED from AndroidManifest.xml:13:9
 	android:label
-		ADDED from AndroidManifest.xml:13:13
+		ADDED from AndroidManifest.xml:15:13
 	android:name
-		ADDED from AndroidManifest.xml:12:13
+		ADDED from AndroidManifest.xml:14:13
 meta-data#android.app.searchable
-ADDED from AndroidManifest.xml:14:13
+ADDED from AndroidManifest.xml:16:13
 	android:resource
-		ADDED from AndroidManifest.xml:16:17
+		ADDED from AndroidManifest.xml:18:17
 	android:name
-		ADDED from AndroidManifest.xml:15:17
+		ADDED from AndroidManifest.xml:17:17
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:17:13
+ADDED from AndroidManifest.xml:20:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:18:17
+ADDED from AndroidManifest.xml:21:17
 	android:name
-		ADDED from AndroidManifest.xml:18:25
+		ADDED from AndroidManifest.xml:21:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:20:17
+ADDED from AndroidManifest.xml:23:17
 	android:name
-		ADDED from AndroidManifest.xml:20:27
+		ADDED from AndroidManifest.xml:23:27
 activity#com.liaobb.evernote.ui.SettingActivity
-ADDED from AndroidManifest.xml:23:9
-	android:label
-		ADDED from AndroidManifest.xml:25:13
-	android:name
-		ADDED from AndroidManifest.xml:24:13
-activity#com.liaobb.evernote.ui.EditNoteActivity
 ADDED from AndroidManifest.xml:26:9
 	android:label
 		ADDED from AndroidManifest.xml:28:13
 	android:name
 		ADDED from AndroidManifest.xml:27:13
-activity#com.liaobb.evernote.ui.EditNoteTypeActivity
+activity#com.liaobb.evernote.ui.EditNoteActivity
 ADDED from AndroidManifest.xml:29:9
 	android:label
 		ADDED from AndroidManifest.xml:31:13
 	android:name
 		ADDED from AndroidManifest.xml:30:13
+activity#com.liaobb.evernote.ui.EditNoteTypeActivity
+ADDED from AndroidManifest.xml:32:9
+	android:label
+		ADDED from AndroidManifest.xml:34:13
+	android:name
+		ADDED from AndroidManifest.xml:33:13
+activity#com.liaobb.evernote.ui.ReadNoteActivity
+ADDED from AndroidManifest.xml:35:9
+	android:label
+		ADDED from AndroidManifest.xml:37:13
+	android:name
+		ADDED from AndroidManifest.xml:36:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.2.0:20:5

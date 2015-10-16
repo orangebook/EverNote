@@ -46,7 +46,7 @@ public class EditNoteActivity extends ToolbarActivity {
     Spinner noteTypeSpinner;
 
     private MenuItem doneMenuItem;
-
+    private MenuItem editMenuItem;
 
     private int editNoteID;
     private int currentNoteType = 0;
@@ -70,6 +70,10 @@ public class EditNoteActivity extends ToolbarActivity {
     }
 
     private void initNote() {
+
+        /***
+         * 获取NoteType 类型列表
+         */
         List<NoteType> noteTypes = DataSupport.order("notetype").find(NoteType.class);
         String[] noteTypeArray = new String[noteTypes.size()];
         for (int i = 0; i < noteTypes.size(); i++) {
@@ -91,7 +95,6 @@ public class EditNoteActivity extends ToolbarActivity {
                     }
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -110,6 +113,7 @@ public class EditNoteActivity extends ToolbarActivity {
         }
         noteTitleEditText.addTextChangedListener(new SimpleTextWatcher());
         noteContentEditText.addTextChangedListener(new SimpleTextWatcher());
+
     }
 
     @Override
@@ -139,6 +143,8 @@ public class EditNoteActivity extends ToolbarActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         doneMenuItem = menu.getItem(0);
         doneMenuItem.setVisible(false);
+
+//        editMenuItem = menu.getItem(1);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -146,10 +152,19 @@ public class EditNoteActivity extends ToolbarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.done) {
+        if (id == R.id.done) {//更新操作
             saveNote();
             return true;
-        } else if (id == android.R.id.home) {
+        }
+//        if(id == R.id.edit)
+//        {
+//            noteContentEditText.setFocusable(true);
+//            noteContentEditText.requestFocus();
+//            noteTitleEditText.setEnabled(true);
+//            noteTypeSpinner.setEnabled(true);
+//            editMenuItem.setVisible(false);//隐藏Menu菜单
+//        }
+        else if (id == android.R.id.home) {
             if (doneMenuItem.isVisible()) {
                 showNotSaveNoteDialog();
                 return true;
@@ -236,6 +251,9 @@ public class EditNoteActivity extends ToolbarActivity {
         finish();
     }
 
+    /***
+     * 文本监听器
+     */
     class SimpleTextWatcher implements TextWatcher {
 
         @Override

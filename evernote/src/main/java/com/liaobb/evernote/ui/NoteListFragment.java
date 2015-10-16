@@ -50,6 +50,8 @@ public class NoteListFragment extends Fragment implements View.OnClickListener, 
         Bundle bundle = getArguments();
         noteTypeItem = bundle.getInt(NOTE_INIT_TYPE);
         cardLayout = bundle.getBoolean(NOTE_LAYOUT_TYPE);
+
+        //æŸ¥è¯¢æ•°æ®åº“ä¸­çš„æ•°æ®ï¼Œå¹¶æ˜¾ç¤ºå‡ºæ¥
         currentNoteType = (DataSupport.where("notetype = ?", String.valueOf(noteTypeItem)).find(NoteType.class, true)).get(0);
         noteList = currentNoteType.getNoteList();
         reverseNoteList(noteList);
@@ -99,7 +101,7 @@ public class NoteListFragment extends Fragment implements View.OnClickListener, 
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     floatingActionButton.setVisibility(View.VISIBLE);
                     if (lastVisiableItem + 1 == noteListAdapter.getItemCount()) {
-                        //´Ë´¦ÊµÏÖÉÏÀ­¼ÓÔØ¸ü¶à£¬¸üĞÂnoteListAdapter£¬´ÓÊı¾İ¿âÖĞÈ¡ÏÂÒ»Ò³µÄÊı¾İ³öÀ´
+                        //æ­¤å¤„å®ç°ä¸Šæ‹‰åŠ è½½æ›´å¤šï¼Œæ›´æ–°noteListAdapterï¼Œä»æ•°æ®åº“ä¸­å–ä¸‹ä¸€é¡µçš„æ•°æ®å‡ºæ¥
                         Log.d(App.TAG, "reload next page note");
                     }
                 } else {
@@ -140,6 +142,7 @@ public class NoteListFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public void onClick(View v) {
+        //è·³è½¬åˆ°ReadNoteActivityç•Œé¢
         Intent intent = new Intent(getActivity(), EditNoteActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt(NOTE_INIT_TYPE, noteTypeItem);
@@ -192,6 +195,11 @@ public class NoteListFragment extends Fragment implements View.OnClickListener, 
         noteListAdapter.orderNoteList(orderListIndicator);
     }
 
+    /***
+     * æœç´¢æ›´æ–°æ“ä½œ
+     *
+     * @param s
+     */
     public void filter(String s) {
         noteListAdapter.getFilter().filter(s);
     }
@@ -204,6 +212,9 @@ public class NoteListFragment extends Fragment implements View.OnClickListener, 
         floatingActionButton.setVisibility(View.VISIBLE);
     }
 
+    /***
+     * æ•°åº“æ®æ›´æ–°æ“ä½œ
+     */
     @Override
     public void onRefresh() {
         reloadNoteListAsSelectNoteType(noteTypeItem);

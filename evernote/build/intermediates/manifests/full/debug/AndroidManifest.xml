@@ -8,6 +8,9 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="22" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.liaobb.evernote.common.App"
         android:allowBackup="true"
@@ -36,6 +39,10 @@
         <activity
             android:name="com.liaobb.evernote.ui.EditNoteTypeActivity"
             android:label="@string/title_activity_edit_note_type" />
+        <activity
+            android:name="com.liaobb.evernote.ui.ReadNoteActivity"
+            android:label="@string/title_activity_read_note" >
+        </activity>
     </application>
 
 </manifest>

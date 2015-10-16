@@ -4,4 +4,4 @@
     <item android:drawable="@drawable/abc_list_pressed_holo_dark" android:state_pressed="true" />
     <item android:drawable="@drawable/abc_list_pressed_holo_dark" android:state_long_pressable="true" />
     <item android:drawable="@android:color/transparent" />
-</selector><!-- From: file:/D:/BaiduYunDownload/Notes-master/evernote/src/main/res/drawable/activated_background.xml -->
+</selector><!-- From: file:/I:/CollageMe/inFact/PROJECT/EverNote/evernote/src/main/res/drawable/activated_background.xml -->

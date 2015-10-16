@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.liaobb.evernote">
+    package="com.liaobb.evernote" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:name=".common.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +25,17 @@
         </activity>
         <activity
             android:name=".ui.SettingActivity"
-            android:label="@string/title_activity_setting"></activity>
+            android:label="@string/title_activity_setting" />
         <activity
             android:name=".ui.EditNoteActivity"
-            android:label="@string/title_activity_edit_note"></activity>
+            android:label="@string/title_activity_edit_note" />
         <activity
             android:name=".ui.EditNoteTypeActivity"
-            android:label="@string/title_activity_edit_note_type"></activity>
+            android:label="@string/title_activity_edit_note_type" />
+        <activity
+            android:name=".ui.ReadNoteActivity"
+            android:label="@string/title_activity_read_note" >
+        </activity>
     </application>
 
 </manifest>

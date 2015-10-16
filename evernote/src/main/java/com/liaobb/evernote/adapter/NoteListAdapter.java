@@ -18,8 +18,8 @@ import android.widget.Toast;
 import com.liaobb.evernote.R;
 import com.liaobb.evernote.bean.Note;
 import com.liaobb.evernote.common.NoteUtils;
-import com.liaobb.evernote.ui.EditNoteActivity;
 import com.liaobb.evernote.ui.NoteListFragment;
+import com.liaobb.evernote.ui.ReadNoteActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,7 +88,8 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteLi
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, EditNoteActivity.class);
+              //  Intent intent = new Intent(context, EditNoteActivity.class);
+                Intent intent = new Intent(context,ReadNoteActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt(NoteListFragment.NOTE_INIT_TYPE, currentNoteType);
                 bundle.putInt(NoteListFragment.EDIT_NOTE_ID, currentNote.getNoteId());
@@ -170,6 +171,10 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteLi
         notifyDataSetChanged();
     }
 
+    /***
+     * 清除之间的数据，并添加新的搜索的数据，通知Adapter更新
+     * @param newNoteList
+     */
     public void setNoteListNotInitAllNoteList(List<Note> newNoteList) {
         noteList.clear();
         noteList.addAll(newNoteList);
@@ -272,6 +277,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteLi
         return new NoteFilter(this, allNoteList);
     }
 
+    //关于搜索的过程,通过文件过虑来实现
     private static class NoteFilter extends Filter {
 
         private final NoteListAdapter adapter;
@@ -293,14 +299,21 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteLi
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             filteredList.clear();
+
             final FilterResults results = new FilterResults();
-            if (constraint.length() == 0) {
+            if (constraint.length() == 0) {//当未输入数据时，显示所有的数据
                 filteredList.addAll(allNoteList);
             } else {
-                for (Note note : allNoteList) {
-                    if (note.getNoteTitle().contains(constraint) || note.getNoteContent().contains(constraint)) {
-                        filteredList.add(note);
+                //对以空格的句子，对单词进行分割
+                String[] args =  constraint.toString().split(" ");
+
+                for (Note note : allNoteList) {//否则，对所有记录进行比较，是否包含一连串的数据
+                    for (int i = 0; i < args.length; i++) {
+                        if (note.getNoteTitle().contains(args[i]) || note.getNoteContent().contains(args[i])) {
+                            filteredList.add(note);
+                        }
                     }
+
                 }
             }
             results.values = filteredList;
@@ -310,7 +323,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteLi
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            //adapter.setNoteList((ArrayList<Note>) results.values);
+            //用于显示搜索后的内容
             adapter.setNoteListNotInitAllNoteList((ArrayList<Note>) results.values);
         }
     }

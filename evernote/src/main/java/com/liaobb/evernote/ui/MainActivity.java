@@ -101,11 +101,15 @@ public class MainActivity extends AppCompatActivity {
             currentItem = savedInstanceState.getInt(CURRENT_NOTE_MENU_KEY);
         }
 
+        //注释初始化
         ButterKnife.inject(this);
+
+        //EventBus，通信注册
         EventBus.getDefault().register(this);
 
         mDoubleClickExitHelper = new DoubleClickExitHelper(this);
 
+        //配置文件初始化
         sharedPreferences = getSharedPreferences(SettingActivity.PREFERENCE_FILE_NAME, Context.MODE_PRIVATE);
 
         initToolBar();
@@ -175,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
     }
 
     @Override
@@ -184,8 +189,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolBar() {
-        //toolbar.setTitle(getResources().getString(R.string.notes_menu_default));//���ñ���
-        setSupportActionBar(toolbar);//����toolbar
+        setSupportActionBar(toolbar);//设置Toolbar
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
 
     }
@@ -211,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         };
         mDrawerToggle.syncState();
 
-        mDrawerLayout.setDrawerListener(mDrawerToggle);//���ü�����
+        mDrawerLayout.setDrawerListener(mDrawerToggle);//设置监听器
 
         drawerListAdapter = new DrawerListAdapter(this, mNoteTypeList);
         mDrawerListView.setAdapter(drawerListAdapter);
@@ -274,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        //SearchableView
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchItem = menu.findItem(R.id.action_search);
@@ -329,16 +334,16 @@ public class MainActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawer(drawerRootView);
                 }
                 break;*/
-            case R.id.action_settings:
+            case R.id.action_settings://APP应用设置
                 showNoteSettings();
                 break;
-            case R.id.action_orderItem:
+            case R.id.action_orderItem://APP 记录排序
                 orderNoteList();
                 break;
             case R.id.action_showItem:
                 setNoteListShowItem();
                 break;
-            case R.id.action_cleanNoteItem:
+            case R.id.action_cleanNoteItem: // APP 删除
                 NoteType clearNoteType = (DataSupport.where("notetype = ?", String.valueOf(currentItem)).find(NoteType.class, true)).get(0);
                 List<Note> clearNoteList = clearNoteType.getNoteList();
                 for (Note note : clearNoteList) {
@@ -357,16 +362,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setMenuListViewGravity(int gravity) {
+        //设置侧滑菜单的侧滑方向 Left 或 Right
         DrawerLayout.LayoutParams params = (DrawerLayout.LayoutParams) drawerRootView.getLayoutParams();
         params.gravity = gravity;
         drawerRootView.setLayoutParams(params);
     }
 
+    /***
+     * 跳转到侧滑菜单位
+     */
     private void showNoteSettings() {
         Intent intent = new Intent(MainActivity.this, SettingActivity.class);
         startActivity(intent);
     }
 
+    /***
+     * 菜单排序
+     */
     private void orderNoteList() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.select_order_type_note_list));
@@ -426,12 +438,16 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /***
+     * EventBus回调接口
+     * @param event
+     */
     public void onEvent(Integer event) {
         switch (event) {
             case NoteUtils.NOTE_ADD_EVENT:
                 noteAddEvent = true;
                 break;
-            case NoteUtils.NOTE_UPDATE_EVENT:
+            case NoteUtils.NOTE_UPDATE_EVENT://传递当前点击的Item position
                 changeToSelectNoteType(currentItem);
                 break;
             case NoteUtils.NOTE_CLEARALL_EVENT:
@@ -454,9 +470,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);//��ע��EventBus
+        EventBus.getDefault().unregister(this);//注销EventBus
     }
 
+    //绑定的点击事件
     @OnClick(R.id.edit_note_type)
     public void onEditNoteType() {
         //mDrawerLayout.closeDrawer(drawerRootView);
@@ -470,8 +487,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /***
+     * 逻辑处理，当用户打开菜单，则关闭，只有当菜单关闭时，才会提示双击退出应用
+     *
+     * @param keyCode
+     * @param event
+     * @return
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (mDrawerLayout.isDrawerOpen(drawerRootView)) {
                 mDrawerLayout.closeDrawer(drawerRootView);

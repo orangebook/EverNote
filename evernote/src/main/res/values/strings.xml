@@ -98,6 +98,7 @@
     <string name="show_helpdoc">查看帮助</string>
     <string name="show_help_key">show_help_key</string>
     <string name="double_back_exit_hint">再按一次返回键退出应用</string>
+    <string name="title_activity_read_note">ReadNoteActivity</string>
 
 
 </resources>
